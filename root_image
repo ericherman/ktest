@@ -256,7 +256,7 @@ update_packages()
 
 trim_image()
 {
-    e2fsck -f "$1"
+    e2fsck -f -p "$1"
     resize2fs -M "$1"			# shrinks the file
     resize2fs "$1" "$IMAGE_SIZE"	# re-grows as sparse
 }
